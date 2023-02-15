@@ -8,9 +8,11 @@
 #include <iostream>
 #include <iomanip>
 #include <ctype.h>
+#include <cmath>
 using namespace::std;
 
 int main() {
+    
 //    Первое задание
 //    float gallons;
 //    cout << "Пожалуйста введите количество галлонов: ";
@@ -51,18 +53,60 @@ int main() {
     
 //    Шестое задание
     
-    int dollars;
-    cout << "Введите количество долларов: ";
-    cin >> dollars;
-    float funts = dollars * 1.487;
-    float franks = dollars * 0.172;
-    float deutschMarks = dollars * 0.584;
-    float yens = dollars * 0.00955;
-    cout << "Фунты стерлингов: " << funts << endl << "Франки: " << franks
-    << endl << "Немецкие марки: " << deutschMarks << endl <<
-    "Японские йены: " << yens << endl;
+//    int dollars;
+//    cout << "Введите количество долларов: ";
+//    cin >> dollars;
+//    float funts = dollars * 1.487;
+//    float franks = dollars * 0.172;
+//    float deutschMarks = dollars * 0.584;
+//    float yens = dollars * 0.00955;
+//    cout << "Фунты стерлингов: " << funts << endl << "Франки: " << franks
+//    << endl << "Немецкие марки: " << deutschMarks << endl <<
+//    "Японские йены: " << yens << endl;
     
+//    Седьмое задание
+    
+//    int celsius;
+//    cout << "Введите температуру в градусах Цельсия: ";
+//    cin >> celsius;
+//    int fahrengeit = (celsius * 9 / 5) + 32;
+//    cout << "Температура по Фаренгейту: " << fahrengeit << endl;
+    
+//    Восьмое задание
+//        int pop1 = 135, pop2 = 7290, pop3 = 11300, pop4 = 16200;
+//        int year = 1990;
+//        cout << year << setw(12) << setfill('.') << pop1 << endl <<
+//        ++year << setw(12) << pop2 << endl << ++year << setw(12) <<
+//        pop3 << endl << ++year << setw(12) << pop4 << endl;
+    
+//    Девятое задание
+//    int a;
+//    int b;
+//    int c;
+//    int d;
+//    char dummychar = '/';
+//    cout << "Введите первую дробь: ";
+//    cin >> a >> dummychar >> b;
+//    cout << "Введите вторую дробь: ";
+//    cin >> c >> dummychar >> d;
+//    int numerator = (a*d + b*c);
+//    int divider = b*d;
+//    cout << "Сумма равна: " << numerator << dummychar << divider << endl;
+   
+    
+//    Десятое задание
+    int funt;
+    int shilling;
+    int penny;
+    cout << "Введите количество фунтов: ";
+    cin >> funt;
+    cout << "Введите количество шиллингов: ";
+    cin >> shilling;
+    cout << "Введите количество пенсов: ";
+    cin >> penny;
+    int oldPennys = (funt * 20 * 12) + (shilling * 12) + penny;
+    float newPennys = oldPennys / 2.4;
+    float newFunt = newPennys / 100;
+    cout << "Десятичных фунтов: " << "£" << round(newFunt*100)/100 << endl;
     return 0;
-    
-
 }
