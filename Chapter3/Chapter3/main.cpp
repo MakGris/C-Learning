@@ -7,6 +7,7 @@
 
 #include <iostream>
 #include <iomanip>
+#include <unistd.h>
 using namespace::std;
 
 int main() {
@@ -63,18 +64,55 @@ int main() {
     
 //    Последовательность Фибоначчи
     
-    const unsigned long limit = 4294967295;
+//    const unsigned int limit = 8294967295;
+//
+//    unsigned long next = 0;
+//    unsigned long last = 1;
+//
+//    while(next < limit / 2) { // Арифметические операции всегда имеют более высокий приоритет, чем операции сравнения
+//        cout << last << " ";
+//        long sum =next + last;
+//        next = last;
+//        last = sum;
+//    }
+//    cout << endl;
     
-    unsigned long next = 0;
-    unsigned long last = 1;
+//    Цикл do-while
+//    long dividend, divisor;
+//    char answer;
+//
+//    do {
+//        cout << "Введите делимое: ";
+//        cin >> dividend;
+//        cout << "Введите делитель: ";
+//        cin >> divisor;
+//        cout << "Частное равно: " << dividend / divisor << "\n";
+//        cout << "Остаток от деления равен: " << dividend % divisor << "\n";
+//        cout << "Еще раз?(y/n): ";
+//        cin >> answer;
+//    }
+//    while (answer != 'n');
     
-    while(next < limit / 2) { // Арифметические операции всегда имеют более высокий приоритет, чем операции сравнения
-        cout << last << " ";
-        long sum =next + last;
-        next = last;
-        last = sum;
+////    Условный оператор if
+//    int x;
+//    cout << "Введите число: ";
+//    cin >> x;
+//
+//    if (x > 100) {
+//        cout << "Число " << x << " ";
+//        cout << "больше, чем 100\n";
+//    }
+//    Совместное использование цикла и оператора ветвления if
+    int n, j;
+    cout << "Введите число: ";
+    cin >> n;
+    
+    for (j = 2; j <= n / 2; j++) {
+        if (n % j == 0) {
+            cout << "Число не является простым. " << "Делится на " << j << endl;
+            exit(0);
+        }
     }
-    cout << endl;
-    
+    cout << "Число является простым" << endl;
     return 0;
 }
