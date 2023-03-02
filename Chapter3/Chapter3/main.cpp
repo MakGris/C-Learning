@@ -280,42 +280,63 @@ int main() {
  
  
  */
-    char dir = 'a';
-        int x = 10, y = 10;
+//    char dir = 'a';
+//        int x = 10, y = 10;
+//
+//        while(dir != 'q') {
+//            cout << "Ваши координаты: " << x << ", " << y << endl;
+//            if (x == 5 || x > 15) {
+//                cout << "Осторожно драконы!\n";
+//            }
+//            if (!(x%7) && !(y%7)) {
+//                cout << "Вы нашли гриб!\n";
+//            }
+//            cout << "Выберете направление движения (n, s, e, w): ";
+//            cin >> dir;
+//            switch (dir) {
+//                case 'n':
+//                    y--;
+//                    break;
+//                case 's':
+//                    y++;
+//                    break;
+//                case 'e':
+//                    x++;
+//                    break;
+//                case 'w':
+//                    x--;
+//                    break;
+//                case 'q':
+//                    cout << "Выход...\n";
+//                    break;
+//                default:
+//                    cout << "Попробуйте еще\n";
+//            }
+//            if (x == 7 && y == 11) {
+//                cout << "Вы нашли сокровище!\n";
+//                exit(0);
+//            }
+//        }
     
-        while(dir != 'q') {
-            cout << "Ваши координаты: " << x << ", " << y << endl;
-            if (x == 5 || x > 15) {
-                cout << "Осторожно драконы!\n";
-            }
-            if (!(x%7) && !(y%7)) {
-                cout << "Вы нашли гриб!\n";
-            }
-            cout << "Выберете направление движения (n, s, e, w): ";
-            cin >> dir;
-            switch (dir) {
-                case 'n':
-                    y--;
-                    break;
-                case 's':
-                    y++;
-                    break;
-                case 'e':
-                    x++;
-                    break;
-                case 'w':
-                    x--;
-                    break;
-                case 'q':
-                    cout << "Выход...\n";
-                    break;
-                default:
-                    cout << "Попробуйте еще\n";
-            }
-            if (x == 7 && y == 11) {
-                cout << "Вы нашли сокровище!\n";
-                exit(0);
-            }
-        }
+//
+    long dividend, divisor;
+       char answer;
+   
+       do {
+           cout << "Введите делимое: ";
+           cin >> dividend;
+           cout << "Введите делитель: ";
+           cin >> divisor;
+           if (divisor == 0) {
+               cout << "Некорректный делитель!\n";
+               continue;
+           }
+           cout << "Частное равно: " << dividend / divisor << "\n";
+           cout << "Остаток от деления равен: " << dividend % divisor << "\n";
+           cout << "Еще раз?(y/n): ";
+           cin >> answer;
+       }
+       while (answer != 'n');
+    
         return 0;
     }
