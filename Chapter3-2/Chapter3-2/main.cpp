@@ -7,6 +7,7 @@
 
 #include <iostream>
 #include <string>
+#include <iomanip>
 
 using namespace std;
 
@@ -104,12 +105,94 @@ int main() {
 //            break;
 //    }
 //    Задание 3
-    char ch;
-    unsigned long total = 0;
-    cout << "Введите число: ";
-    while ((ch = getchar()) != '\n') {
-        total = total * 10 + ch-'0';
+//    char ch;
+//    unsigned long total = 0;
+//    cout << "Введите число: ";
+//    while ((ch = getchar()) != '\n') {
+//        total = total * 10 + ch-'0';
+//    }
+//    cout << "Получилось число: "<< total << endl;
+    
+//   Задание 4
+//    double result, operandOne, operandTwo;
+//    char action;
+//    char oneMoreTime;
+//    cout << "Введите первый операнд, операцию и второй операнд: ";
+//    cin >> operandOne >> action >> operandTwo;
+//    do {
+//        cout << "Введите первый операнд, операцию и второй операнд: ";
+//        cin >> operandOne >> action >> operandTwo;
+//
+//        switch (action) {
+//            case '/':
+//                result = operandOne / operandTwo;
+//                break;
+//            case '*':
+//                result = operandOne * operandTwo;
+//                break;
+//            case '-':
+//                result = operandOne - operandTwo;
+//                break;
+//            case '+':
+//                result = operandOne + operandTwo;
+//                break;
+//
+//            default:
+//                cout << "Введен не верный оператор!";
+//                break;
+//        }
+//
+//        cout << "Результат равен = " << result << '\n';
+//        cout << "Выполнить еще одну операцию (y/n): ";
+//        cin >> oneMoreTime;
+//
+//
+//    }
+//
+//    while (oneMoreTime != 'n');
+    
+//    Задание 5
+//    int numberOfX = 20;
+//    int space = 25;
+//    for(int j = 1; j <= 20; j++) {
+//        cout << setw(space);
+//        for(int x = numberOfX; x <= 20; x++) {
+//            cout <<'X';
+//        }
+//        space -= 1;
+//        numberOfX -= 2;
+//        cout << endl;
+//    }
+//    cout << endl;
+//    Задание 6
+//    unsigned int numb;
+//    do {
+//        unsigned long fact = 1;
+//        cout << "Введите целое число, факториал которого мы будем вычислять: ";
+//        cin >> numb;
+//        for(int j = numb; j > 0; j--) {
+//            fact *= j;
+//        }
+//        if(numb == 0) {
+//            cout <<"Ошибка" << endl;
+//        } else {
+//            cout << "Факториал числа равен " << fact<< endl;
+//        }
+//    }
+//    while (numb != 0);
+        
+//    Задание 7
+    int years;
+    double percent, deposit;
+    cout << "Введите начальный вклад: ";
+    cin >> deposit;
+    cout << "Введите число лет: ";
+    cin >> years;
+    cout << "Введите процентную ставку: ";
+    cin >> percent;
+    for(int x = years; x > 0; x--) {
+        deposit = deposit + (deposit * (percent / 100));
     }
-    cout << "Получилось число: "<< total << endl;
+    cout << "Через " << years << " " << "лет вы получите: " << deposit << " доллара" <<endl;
     return 0;
 }
