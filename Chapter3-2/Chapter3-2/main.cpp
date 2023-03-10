@@ -182,17 +182,72 @@ int main() {
 //    while (numb != 0);
         
 //    Задание 7
-    int years;
-    double percent, deposit;
-    cout << "Введите начальный вклад: ";
-    cin >> deposit;
-    cout << "Введите число лет: ";
-    cin >> years;
-    cout << "Введите процентную ставку: ";
-    cin >> percent;
-    for(int x = years; x > 0; x--) {
-        deposit = deposit + (deposit * (percent / 100));
+//    int years;
+//    double percent, deposit;
+//    cout << "Введите начальный вклад: ";
+//    cin >> deposit;
+//    cout << "Введите число лет: ";
+//    cin >> years;
+//    cout << "Введите процентную ставку: ";
+//    cin >> percent;
+//    for(int x = years; x > 0; x--) {
+//        deposit = deposit + (deposit * (percent / 100));
+//    }
+//    cout << "Через " << years << " " << "лет вы получите: " << deposit << " доллара" <<endl;
+//    Упражнение 8
+//    int firstPunds, firstShillings, firstPens;
+//    char dot;
+//    char repeat;
+//    int secondPunds, secondShillings, secondPens;
+//    do {
+//        cout << "Введите первую сумму: £";
+//        cin >> firstPunds >> dot >> firstShillings >>dot >> firstPens;
+//
+//        while(firstShillings > 19 || firstPens > 11) {
+//            cout << "Неверная сумма, попробуйте еще раз: ";
+//            cin >> firstPunds >> dot >> firstShillings >>dot >> firstPens;
+//        }
+//
+//        cout << "Введите вторую сумму: £";
+//        cin >> secondPunds >> dot >> secondShillings >>dot >> secondPens;
+//
+//        while(secondShillings > 19 || secondPens > 11) {
+//            cout << "Неверная сумма, попробуйте еще раз: ";
+//            cin >> secondPunds >> dot >> secondShillings >> dot >> secondPens;
+//        }
+//
+//        int totalPunds = firstPunds + secondPunds;
+//        int totalShillings = firstShillings + secondShillings;
+//        if (totalShillings > 19) {
+//            totalPunds += 1;
+//            totalShillings = totalShillings - 20;
+//        }
+//        int totalPens = firstPens + secondPens;
+//        if (totalPens > 11) {
+//            totalShillings += 1;
+//            totalPens = totalPens - 12;
+//        }
+//        cout << "Всего: £" << totalPunds << dot << totalShillings << dot << totalPens << endl;
+//        cout << "Повторить(y/n)?: ";
+//        cin >> repeat;
+//    }
+//    while (repeat != 'n');
+//
+    int guests;
+    int places;
+    int result;
+    int numberOfVariants;
+    
+    cout << "Введите число гостей: ";
+    cin >> guests;
+    cout << "Введите количество мест: ";
+    cin >> places;
+    
+    
+    for(int j = places; j > 0; j--) {
+        numberOfVariants = guests * (guests - 1);
+        cout << numberOfVariants << endl;
     }
-    cout << "Через " << years << " " << "лет вы получите: " << deposit << " доллара" <<endl;
+    
     return 0;
 }
