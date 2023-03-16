@@ -8,6 +8,7 @@
 #include <iostream>
 #include <string>
 #include <iomanip>
+#include <math.h>
 
 using namespace std;
 
@@ -251,19 +252,125 @@ int main() {
     
     //    Упражнение 10
     
-    int years;
-    double percent, deposit, wantMoney;
-    cout << "Введите начальный вклад: ";
-    cin >> deposit;
-    cout << "Введите желаемую сумму: ";
-    cin >> wantMoney;
-    cout << "Введите процентную ставку: ";
-    cin >> percent;
-    years = (wantMoney - deposit) / (deposit * (percent / 100));
+//    int years;
+//    double percent, deposit, wantMoney;
+//    cout << "Введите начальный вклад: ";
+//    cin >> deposit;
+//    cout << "Введите желаемую сумму: ";
+//    cin >> wantMoney;
+//    cout << "Введите процентную ставку: ";
+//    cin >> percent;
+//    years = (wantMoney - deposit) / (deposit * (percent / 100));
+//
+//    cout << "Через " << years << " " << "лет вы получите: " << wantMoney << " доллара" <<endl;
     
-    cout << "Через " << years << " " << "лет вы получите: " << wantMoney << " доллара" <<endl;
-    
-    
-    
+    //    Упражнение 11
+    int firstPunds, firstShillings, firstPens;
+    double multiplier;
+    char dot;
+    char action;
+    char repeat;
+    int secondPunds, secondShillings, secondPens;
+    do {
+        cout << "Введите первую денежную сумму: £";
+        cin >> firstPunds >> dot >> firstShillings >> dot >> firstPens;
+        if(firstShillings > 19 || firstPens > 11) {
+            cout << "Неправильная сумма, попробуйте еще раз: £";
+            cin >> firstPunds >> dot >> firstShillings >> dot >> firstPens;
+        }
+        cout << "Введите желаемое действие(сложение, вычитание или умножение): ";
+        cin >> action;
+        if(action == '*') {
+            cout << "Введите число на которое хотите умножить денежную сумму: ";
+            cin >> multiplier;
+        } else {
+            cout << "Введите вторую денежную сумму: £";
+            cin >> secondPunds >> dot >> secondShillings >> dot >> secondPens;
+            
+            if(secondShillings > 19 || secondPens > 11) {
+                cout << "Неправильная сумма, попробуйте еще раз: £";
+                cin >> secondPunds >> dot >> secondShillings >> dot >> secondPens;
+            }
+        }
+        
+        switch (action) {
+            case '+': {
+                int totalPunds = firstPunds + secondPunds;
+                int totalShillings = firstShillings + secondShillings;
+                if (totalShillings > 19) {
+                    totalPunds += 1;
+                    totalShillings = totalShillings - 20;
+                }
+                int totalPens = firstPens + secondPens;
+                if (totalPens > 11) {
+                    totalShillings += 1;
+                    totalPens = totalPens - 12;
+                }
+                cout << "Всего: £" << totalPunds << dot << totalShillings << dot << totalPens << endl;
+                break;
+            }
+            case '-': {
+                if(secondPunds > firstPunds) {
+                    cout << "Вторая сумма больше первой, вычитание невозможно" << endl;
+                    cout << "Введите вторую сумму: £";
+                    cin >> secondPunds >> dot >> secondShillings >> dot >> secondPens;
+                }
+                int totalPunds = firstPunds - secondPunds;
+                int totalShillings = firstShillings - secondShillings;
+                if(totalShillings < 1) {
+                    totalPunds -= 1;
+                    if(totalPunds < 1) {
+                        totalPunds = 0;
+                    }
+                    totalShillings = 0;
+                }
+                int totalPens = firstPens - secondPens;
+                if(totalPens < 1) {
+                    totalShillings -= 1;
+                    if(totalShillings < 1) {
+                        totalShillings = 0;
+                    }
+                    totalPens = 0;
+                }
+                cout << "Всего: £" << totalPunds << dot << totalShillings << dot << int(totalPens) << endl;
+                break;
+            }
+            case '*': {
+                double totalPunds = firstPunds * multiplier;
+                double totalShillings = firstShillings * multiplier;
+                double totalPens = firstPens * multiplier;
+                totalShillings += (totalPunds - static_cast<int>(totalPunds)) * 20;
+                totalPens += (totalShillings - static_cast<int>(totalShillings)) * 12;
+                if(totalShillings > 19) {
+                    while (totalShillings > 19) {
+                        totalPunds += 1;
+                        totalShillings -= 20;
+                        if(totalShillings < 1) {
+                            totalShillings = 0;
+                        }
+                    }
+                    
+                }
+                if(totalPens > 11) {
+                    while (totalPens > 11) {
+                        totalShillings += 1;
+                        totalPens -= 12;
+                        if(totalPens < 1) {
+                            totalPens = 0;
+                        }
+                    }
+                }
+                cout << "Всего: £" << trunc(totalPunds) << dot << totalShillings << dot << trunc(totalPens) << endl;
+                break;
+                
+            }
+            default:
+                cout << "Введено неверное действие!\n";
+                break;
+        }
+        cout << "Попробовать еще раз(y\n)?: ";
+        cin >> repeat;
+    }
+    while (repeat != 'n');
     return 0;
 }
