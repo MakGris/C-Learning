@@ -79,20 +79,20 @@ int main() {
     //        ++year << setw(12) << pop2 << endl << ++year << setw(12) <<
     //        pop3 << endl << ++year << setw(12) << pop4 << endl;
     
-    //    Девятое задание
-    //    int a;
-    //    int b;
-    //    int c;
-    //    int d;
-    //    char dummychar = '/';
-    //    cout << "Введите первую дробь: ";
-    //    cin >> a >> dummychar >> b;
-    //    cout << "Введите вторую дробь: ";
-    //    cin >> c >> dummychar >> d;
-    //    int numerator = (a*d + b*c);
-    //    int divider = b*d;
-    //    cout << "Сумма равна: " << numerator << dummychar << divider << endl;
-    
+//        Девятое задание
+//        int a;
+//        int b;
+//        int c;
+//        int d;
+//        char dummychar = '/';
+//        cout << "Введите первую дробь: ";
+//        cin >> a >> dummychar >> b;
+//        cout << "Введите вторую дробь: ";
+//        cin >> c >> dummychar >> d;
+//        int numerator = (a*d + b*c);
+//        int divider = b*d;
+//        cout << "Сумма равна: " << numerator << dummychar << divider << endl;
+//    
     
     //    Десятое задание
     //    int funt;
