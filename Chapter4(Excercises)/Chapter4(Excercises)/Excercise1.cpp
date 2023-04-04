@@ -405,7 +405,8 @@ int main() {
     result.pence = (result.shillings - static_cast<int>(result.shillings)) * 12;
     cout << "Эквивалентная сумма в старой форме записи: " << "£" << result.pounds << '.' <<  trunc(result.shillings) << '.' << result.pence << endl;
     */
-    
+    /*
+    Упражнение 11
     char colon = ':';
     cout << "Введите первое время (hh:min:sec): ";
     cin >> time1.hours >> colon >> time1.minutes >> colon >> time1.seconds;
@@ -414,12 +415,48 @@ int main() {
     cin >> time2.hours >> colon >> time2.minutes >> colon >> time2.seconds;
     long totalsecs2 = time2.hours * 3600 + time2.minutes * 60 + time2.seconds;
     long sumSecs = totalsecs1 + totalsecs2;
-    double hours = sumSecs / 3600.0;
-    resultTime.hours = hours;
-    double minutes = (hours - resultTime.hours) * 60.0;
-    resultTime.minutes = minutes;
-    double seconds = (minutes - resultTime.minutes) * 60.0;
-    resultTime.seconds = (minutes - resultTime.minutes) * 60;
+    resultTime.hours = sumSecs / 3600;
+    resultTime.minutes = (sumSecs - (resultTime.hours * 3600)) / 60;
+    resultTime.seconds = sumSecs - ((resultTime.hours * 3600) + (resultTime.minutes * 60));
     cout << "Общее время: " << resultTime.hours << colon << resultTime.minutes << colon << resultTime.seconds << endl;
+    */
+    
+//    double firstNumerator, firstDivider, secondNumerator, secondDivider;
+    char slash, action, repeat;
+//    double result = 0.0;
+    do {
+        cout << "Введите первую дробь, знак желаемого действия и вторую дробь: ";
+        cin >> fraction1.numerator >> slash >> fraction1.divider >> action >> fraction2.numerator >> slash >> fraction2.divider;
+        
+        switch (action) {
+            case '+':
+                resultFraction.numerator = (fraction1.numerator * fraction2.divider) + (fraction1.divider * fraction2.numerator);
+                resultFraction.divider = fraction1.divider * fraction2.divider;
+//                result = (firstNumerator*secondDivider + firstDivider*secondNumerator)/(firstDivider*secondDivider);
+                break;
+            case '-':
+                resultFraction.numerator = (fraction1.numerator * fraction2.divider) - (fraction1.divider * fraction2.numerator);
+                resultFraction.divider = fraction1.divider * fraction2.divider;
+//                result = (firstNumerator*secondDivider - firstDivider*secondNumerator)/(firstDivider*secondDivider);
+                break;
+            case '*':
+                resultFraction.numerator = fraction1.numerator * fraction2.numerator;
+                resultFraction.divider = fraction1.divider * fraction2.divider;
+//                result = (firstNumerator * secondNumerator)/(firstDivider * secondDivider);
+                break;
+            case '/':
+                resultFraction.numerator = fraction1.numerator * fraction2.divider;
+                resultFraction.divider = fraction1.divider * fraction2.numerator;
+//                result = (firstNumerator * secondDivider)/(firstDivider * secondNumerator);
+                break;
+            default:
+                cout << "Введен неверный знак операции!";
+                break;
+        }
+        cout << "Результат равен: " << resultFraction.numerator << slash << resultFraction.divider << endl;
+        cout << "Попробовать еще раз(y/n)?: ";
+        cin >> repeat;
+    }
+    while(repeat != 'n');
     return 0;
 }
