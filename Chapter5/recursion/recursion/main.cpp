@@ -16,7 +16,7 @@ int main() {
     cout << "Введите целое число: ";
     cin >> number;
     factorial = factorialFunc(number);
-    cout << "Факториал числа " << number << "равен: " << factorial << endl;
+    cout << "Факториал числа " << number << " равен: " << factorial << endl;
     return 0;
 }
 unsigned long factorialFunc(unsigned long number) {
