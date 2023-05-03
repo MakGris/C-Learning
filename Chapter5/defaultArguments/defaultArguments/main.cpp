@@ -13,7 +13,7 @@ using namespace std;
 void repchar(char = '*', int = 45);
 
 
-int main(int argc, const char * argv[]) {
+int main() {
     repchar();
     repchar('=');
     repchar('+', 30);
