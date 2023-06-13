@@ -28,11 +28,11 @@ int main() {
     //    pop3 << endl << setw(9) << ++year << setw(12) << pop4 << endl;
     
     //    Третье задание
-    //    int x = 10;
-    //    cout << x << endl;
-    //    x += 10;
-    //    cout << x << endl;
-    //    cout << --x << endl;
+//        int x = 10;
+//        cout << x << endl;
+//        x += 10;
+//        cout << x << endl;
+//        cout << --x << endl;
     
     //    Четвертое задание
     //    cout << "\tЯ считал слонов и в нечет и в чет,\n\
@@ -112,11 +112,11 @@ int main() {
     //    Одиннадцатое задание
     
     
-//    cout << setw(20) << setiosflags(ios::left)  << "Фамилия" << setw(15) << setiosflags(ios::left) << "Имя" << setw(20) << setiosflags(ios::left) << "Адрес" << setw(20) << setiosflags(ios::left)<< "Город" << endl;
-//    cout  << setw(55) << setfill('-') << "" << endl;
-//    cout << setfill(' ') << setiosflags(ios::left) << setw(19) << "Петров" << setiosflags(ios::left) << setw(19) << "Василий" << setiosflags(ios::left) <<setw(23) << "Кленовая 16" << setiosflags(ios::left) << setw(20) << "Санкт-Петербург" << endl;
-//    cout << setiosflags(ios::left) << setw(19) << "Иванов" << setiosflags(ios::left) << setw(18) << "Сергей" << setiosflags(ios::left) <<setw(23) << "Осиновая 3" << setiosflags(ios::left) << setw(20) << "Находка" << endl;
-//    cout << setiosflags(ios::left) << setw(20) << "Сидоров" << setiosflags(ios::left) << setw(16) << "Иван" << setiosflags(ios::left) <<setw(24) << "Березовая 21" << setiosflags(ios::left) << setw(20) << "Калининград" << endl;
+    cout << setw(20) << setiosflags(ios::left)  << "Фамилия" << setw(15) << setiosflags(ios::left) << "Имя" << setw(20) << setiosflags(ios::left) << "Адрес" << setw(20) << setiosflags(ios::left)<< "Город" << endl;
+    cout  << setw(55) << setfill('-') << "" << endl;
+    cout << setfill(' ') << setiosflags(ios::left) << setw(19) << "Петров" << setiosflags(ios::left) << setw(19) << "Василий" << setiosflags(ios::left) <<setw(23) << "Кленовая 16" << setiosflags(ios::left) << setw(20) << "Санкт-Петербург" << endl;
+    cout << setiosflags(ios::left) << setw(19) << "Иванов" << setiosflags(ios::left) << setw(18) << "Сергей" << setiosflags(ios::left) <<setw(23) << "Осиновая 3" << setiosflags(ios::left) << setw(20) << "Находка" << endl;
+    cout << setiosflags(ios::left) << setw(20) << "Сидоров" << setiosflags(ios::left) << setw(16) << "Иван" << setiosflags(ios::left) <<setw(24) << "Березовая 21" << setiosflags(ios::left) << setw(20) << "Калининград" << endl;
     
     //    Двенадцатое задание
 //    int funt;
@@ -132,16 +132,16 @@ int main() {
 //    float newPennys = oldPennys / 2.4;
 //    float newFunt = newPennys / 100;
 //    cout << "Десятичных фунтов: " << "£" << round(newFunt*100)/100 << endl;
-    float newPounds;
-    int oldPunds;
-    float shillings;
-    float pens;
-    cout << "Введите число десятичных фунтов: ";
-    cin >> newPounds;
-    oldPunds = static_cast<int>(newPounds);
-    shillings = (newPounds - oldPunds) * 20;
-    pens = (shillings - static_cast<int>(shillings)) * 12;
-    cout << "Эквивалентная сумма в старой форме записи: " << "£" << oldPunds << '.' <<  trunc(shillings) << '.' << trunc(pens) << endl;
+//    float newPounds;
+//    int oldPunds;
+//    float shillings;
+//    float pens;
+//    cout << "Введите число десятичных фунтов: ";
+//    cin >> newPounds;
+//    oldPunds = static_cast<int>(newPounds);
+//    shillings = (newPounds - oldPunds) * 20;
+//    pens = (shillings - static_cast<int>(shillings)) * 12;
+//    cout << "Эквивалентная сумма в старой форме записи: " << "£" << oldPunds << '.' <<  trunc(shillings) << '.' << trunc(pens) << endl;
     
     
     
