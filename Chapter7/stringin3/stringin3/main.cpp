@@ -14,7 +14,7 @@ using namespace std;
  */
 
 int main() {
-
+//    const int max = 600;
     char string [ ] = "Я памятник себе воздвиг нерукотворный";
 
     cout << string << endl;
