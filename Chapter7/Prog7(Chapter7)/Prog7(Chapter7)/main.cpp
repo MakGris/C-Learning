@@ -19,7 +19,7 @@ int main() {
     int n;
     Part parts [arraySize];
     
-    for (n = 0; n< arraySize; n++) {
+    for (n = 0; n < arraySize; n++) {
         cout << "Введите номер модели: ";
         cin >> parts[n].modelNumber;
         cout << "Введите номер запчасти: ";

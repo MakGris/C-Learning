@@ -9,28 +9,24 @@
 #include <cstring>
 using namespace std;
 
+void reversit(char []);
 
 int main() {
-    char greeting [] = "Following world";
-    int k = strlen(greeting) - 1;
-    cout << k << endl;
-   
-    for (int j = 0; j < strlen(greeting) / 2; j++) {
-        char swap = greeting[j];
-        greeting [j] = greeting [k];
-        greeting [k] = swap;
-        k -= 1;
-    }
-    cout << greeting << endl;
+    int max = 80;
+    char greeting [max];
+    cout << "Введите фразу: ";
+    cin.get(greeting, max);
+    reversit(greeting);
     return 0;
 }
 
-//char reversit(char word [max]) {
-//
-//}
-//Hello
-//olleh
-/*
- 1.oellh
- 2.olleh
- */
+void reversit(char word []) {
+    int count = static_cast<int>(strlen(word) - 1);
+    for (int j = 0; j < strlen(word) / 2; j++) {
+        char swap = word[j];
+        word [j] = word [count];
+        word [count] = swap;
+        count -= 1;
+    }
+    cout << word << endl;
+}
