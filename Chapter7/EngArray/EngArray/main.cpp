@@ -21,6 +21,20 @@ public:
     void showDistance() {
         cout << feet << "\'-" << inches << "\"";
     }
+    
+    void addDist(Distance d2, Distance d3) {
+        
+        inches = d2.inches + d3.inches;
+        feet = 0;
+        
+        if (inches >= 12) {
+            inches -= 12;
+            feet ++;
+        }
+        
+        feet += d2.feet + d3.feet;
+    }
+
 };
 
 
