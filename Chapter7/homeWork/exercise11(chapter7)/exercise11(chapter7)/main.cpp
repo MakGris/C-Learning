@@ -28,10 +28,11 @@ int main() {
 //
 //    }while(repeat != 'n');
     
-    double sum = 13214.21;
+    double sum = 1234567891.99;
     convertDoubleToChar(sum);
     return 0;
 }
+
 double convertCharToDouble(char amount[]) {
     const int max = 22;
     char amount2 [max];
@@ -48,16 +49,18 @@ double convertCharToDouble(char amount[]) {
 
 void convertDoubleToChar(double amount) {
     stringstream strs;
-    strs << amount;
+    strs << setprecision(16) << amount;
     string str = strs.str();
-    char charArray[22];
-    strcpy(charArray, str.c_str());
+    char charArray[22] = "$";
+    for(int i = 0, j = 1; i < 22; i++) {
+        charArray[j++] = str[i];
+        }
+    
+    cout << 4%2 << endl;
     cout << charArray;
-//    for(int i = 0; i < 22; i++) {
-//        cout << charArray[i];
-//    }
+    }
     
     
     
-}
+
 
