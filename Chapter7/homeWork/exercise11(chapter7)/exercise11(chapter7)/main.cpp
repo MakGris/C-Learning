@@ -12,8 +12,9 @@
 #include <cstring>
 #include <sstream>
 using namespace std;
-double convertCharToDouble (char[]);
-void convertDoubleToChar(double);
+long double convertCharToDouble (char[]);
+void convertDoubleToChar(long double);
+
 int main() {
     
     //    char amount [22];
@@ -29,13 +30,14 @@ int main() {
     //
     //    }while(repeat != 'n');
     
-    long double sum = 1234.99;
+    long double sum = 9999999999999990.00;
     convertDoubleToChar(sum);
+    
     return 0;
 }
 
-double convertCharToDouble(char amount[]) {
-    const int max = 22;
+long double convertCharToDouble(char amount[]) {
+    const int max = 26;
     char amount2 [max];
     for(int i = 0, j = 0; i < max; i++) {
         if(amount[i] != ',' && amount[i] != '$' ) {
@@ -44,40 +46,36 @@ double convertCharToDouble(char amount[]) {
             amount2[j] = amount[i];
         }
     }
-    double money = atof(amount2);
+    long double money = atof(amount2);
     return money;
 }
 
-void convertDoubleToChar(double amount) {
-    ostringstream strs;
-//    amount = floor(amount * 100)/100;
-    strs << setprecision(18) << amount;
-    string str = strs.str();
-    char charArray[26] = "$0,000,000,000,000,000.00";
-    
-    
-    for (int i = 0, j = 1 ; i < str.size(); i++) {
-        charArray[j++] = str[i];
-//        if(i==3) {
-//            charArray[j++] = ',';
-//            charArray[j++] = str[i];
-//
-//        } else if(i==6) {
-//            charArray[j++] = ',';
-//            charArray[j++] = str[i];
-//        }else if (i==9) {
-//            charArray[j++] = ',';
-//            charArray[j++] = str[i];
-//        }
-//        else {
-//            charArray[j++] = str[i];
-//
-//        }
 
-        
+void convertDoubleToChar(long double amount) {
+    if (amount <= 9999999999999990.00) {
+        ostringstream strs;
+        strs << setiosflags(ios::fixed) << setiosflags(ios::showpoint) <<setprecision(2) << amount;
+        string str = strs.str();
+        str.insert(0, "$");
+        cout << str << endl;
+        int n = 0;
+        for (int i = str.find('.') - 1; i > 0; i--) {
+            if (++n % 3 == 0 && i != 1) {
+                str.insert(i, ",");
+            }
+        }
+        int sizeOfString = str.length();
+        char charAmount[sizeOfString];
+        str.copy(charAmount, sizeOfString);
+        charAmount[sizeOfString] = '\0';
+        cout << charAmount << endl;
+    } else {
+        cout << "Введено слишком большое число!" << endl;
     }
-    cout << charArray << endl;
-}
+    
+
+    }
+  
 
 
 
