@@ -18,7 +18,7 @@ public:
         strcpy(str, "");
     }
     String(char const s[]) {
-        if(strlen(s) < 80) {
+        if(strlen(s) < max) {
         strcpy(str, s);
         } else {
             cout << "Переполнение!";
